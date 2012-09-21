@@ -5,8 +5,8 @@ require File.expand_path('../lib/credit_card_checker/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.name          = "credit_card_checker"
   gem.version       = CreditCardChecker::VERSION
-  gem.summary       = %q{TODO: Summary}
-  gem.description   = %q{TODO: Description}
+  gem.summary       = %q{Ruby Quiz #122: Checking Credit Cards}
+  gem.description   = %q{Ruby Quiz #122: Checking Credit Cards}
   gem.license       = "MIT"
   gem.authors       = ["Paul Fioravanti"]
   gem.email         = "paul.fioravanti@gmail.com"
@@ -22,4 +22,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 2.4'
   gem.add_development_dependency 'rubygems-tasks', '~> 0.2'
   gem.add_development_dependency 'yard', '~> 0.8'
+  gem.add_development_dependency 'thor', '~> 0.16'
+  gem.add_development_dependency 'activemodel', '~> 3.2'
 end

@@ -1,4 +1,4 @@
 require 'rspec'
-require 'credit_card_checker/version'
+require 'support/utilities'
 
 include CreditCardChecker
