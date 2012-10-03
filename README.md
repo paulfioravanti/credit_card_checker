@@ -27,13 +27,16 @@ Run tests:
 
     $ rspec spec/
 
+Check test coverage (after running rspec):
+
+    $ open coverage/index.html
+
 ### TODOs:
 
 - More robust CLI testing and implementation; make handling of bad files fail gracefully, add more options etc.
-- Perhaps make use of factories
 
 ### Copyright
 
 Copyright (c) 2012 Paul Fioravanti
 
-See {file:LICENSE.txt} for details.
+See [LICENSE](https://github.com/paulfioravanti/credit_card_checker/blob/master/LICENSE.txt) for details.
