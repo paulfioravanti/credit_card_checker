@@ -15,7 +15,6 @@ describe Checker do
 
   describe "instance methods" do
     it { should respond_to(:check).with(1).argument }
-    it { should respond_to(:result) }
   end
 
   describe "initial state" do

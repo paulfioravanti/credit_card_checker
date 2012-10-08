@@ -1,7 +1,9 @@
 require 'active_model'
 require 'credit_card_checker/checker_helper'
+require 'credit_card_checker/card_number_validator'
 
 module CreditCardChecker
+  # Determines validity of a credit card
   class Checker
     include ActiveModel::Validations
     include CheckerHelper
@@ -12,15 +14,16 @@ module CreditCardChecker
       @cc_number = credit_card.number
       validate_card_type
       determine_validity
+      result
     end
 
-    def result
-      {
-        cc_type:   @cc_type,
-        cc_number: @cc_number,
-        validity:  @validity
-      }
-    end
+    # def result
+    #   {
+    #     cc_type:   @cc_type,
+    #     cc_number: @cc_number,
+    #     validity:  @validity
+    #   }
+    # end
 
     private
 
@@ -40,18 +43,28 @@ module CreditCardChecker
       end
 
       def determine_validity
-        @validity = card_number_valid? ? "valid" : "invalid"
+        # @validity = card_number_valid? ? "valid" : "invalid"
+        validator = CardNumberValidator.new(@cc_number)
+        @validity = validator.number_valid? ? "valid" : "invalid"
       end
 
-      def card_number_valid?
-        digits = @cc_number.chars.map(&:to_i)
-        check = digits.pop
-
-        sum = digits.reverse.each_slice(2).map do |x, y|
-          [(x * 2).divmod(10), y]
-        end.push(check).flatten.compact.inject(:+)
-
-        sum % 10 == 0
+      def result
+        {
+          cc_type:   @cc_type,
+          cc_number: @cc_number,
+          validity:  @validity
+        }
       end
+
+      # def card_number_valid?
+      #   digits = @cc_number.chars.map(&:to_i)
+      #   check = digits.pop
+
+      #   sum = digits.reverse.each_slice(2).map do |left_digit, right_digit|
+      #     [(left_digit * 2).divmod(10), right_digit]
+      #   end.push(check).flatten.compact.inject(:+)
+
+      #   sum % 10 == 0
+      # end
     end
 end

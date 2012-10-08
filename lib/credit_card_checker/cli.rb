@@ -3,9 +3,18 @@ require 'credit_card_checker/checker'
 require 'credit_card_checker/credit_card'
 
 module CreditCardChecker
+  # Command line interface for credit card checker
   class CLI < Thor
 
-    attr_writer :credit_card_numbers, :output
+    attr_writer   :credit_card_numbers, :output
+    attr_accessor :result
+
+    def initialize(*args)
+      super
+      @output = []
+      @credit_card_numbers =
+        File.readlines(options[:filename]).map { |line| line.chomp }
+    end
 
     class_option :filename, aliases: ['-f'],
                   default: 'credit_cards.txt',
@@ -15,9 +24,9 @@ module CreditCardChecker
     desc "check FILE", "checks validity of credit card numbers in a file"
     def check
       checker = Checker.new
-      credit_card_numbers.each do |number|
-        checker.check(CreditCard.new(number))
-        output << format(checker.result)
+      @credit_card_numbers.each do |number|
+        @result = checker.check(CreditCard.new(number))
+        @output << format_result
       end
       formatted_output
     end
@@ -26,29 +35,21 @@ module CreditCardChecker
 
     no_tasks do
 
-      def credit_card_numbers
-        @credit_card_numbers ||=
-          File.readlines(options[:filename]).map { |a| a.chomp }
-      end
-
-      def output
-        @output ||= []
-      end
-
-      def format(output)
+      def format_result
         [
-          "#{output[:cc_type]}:",
-          "#{output[:cc_number]}",
-          "(#{output[:validity]})"
+          "#{@result[:cc_type]}:",
+          "#{@result[:cc_number]}",
+          "(#{@result[:validity]})"
         ]
       end
 
       def formatted_output
-        col_width = output.transpose.map do |col|
-          col.map{ |cell| cell.to_s.length }.max
+        col_width = @output.transpose.map do |col|
+          col.map{ |width| width.to_s.length }.max
         end
-        output.each do |row|
-          puts row.zip(col_width).map{ |cell, w| cell.to_s.ljust(w) }.join(' ')
+        @output.each do |row|
+          puts row.zip(col_width).map{ |cell, width|
+            cell.to_s.ljust(width) }.join(' ')
         end
       end
 

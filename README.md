@@ -1,4 +1,4 @@
-# Credit Card Checker [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/paulfioravanti/credit_card_checker)
+# Credit Card Checker
 
 ## Description
 
@@ -23,6 +23,10 @@ Run program:
 
     $ bin/credit_card_checker
 
+## Testing:
+
+Code quality is attempted by using [RSpec](http://rspec.info/) for testing, [SimpleCov](https://github.com/colszowka/simplecov) for code test coverage, [Reek](https://github.com/troessner/reek) to fix code smells, and [Code Climate](https://codeclimate.com/) for quality metrics.
+
 Run tests:
 
     $ rspec spec/
@@ -30,6 +34,14 @@ Run tests:
 Check test coverage (after running rspec):
 
     $ open coverage/index.html
+
+Check code smells:
+
+    $ rake reek
+
+Check quality metrics:
+
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/paulfioravanti/credit_card_checker)
 
 ### TODOs:
 

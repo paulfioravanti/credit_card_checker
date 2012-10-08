@@ -7,8 +7,7 @@ describe CLI do
   subject { cli }
 
   describe "model attributes" do
-    it { should respond_to(:credit_card_numbers) }
-    it { should respond_to(:output) }
+    it { should respond_to(:result) }
   end
 
   describe "instance methods" do

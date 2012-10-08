@@ -1,6 +1,7 @@
 require 'active_model'
 
 module CreditCardChecker
+  # Model for a basic credit card
   class CreditCard
     include ActiveModel::Validations
 
