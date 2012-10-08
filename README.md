@@ -45,6 +45,7 @@ Check quality metrics:
 
 ### TODOs:
 
+- Fix that one last code reek...
 - More robust CLI testing and implementation; make handling of bad files fail gracefully, add more options etc.
 
 ### Copyright
