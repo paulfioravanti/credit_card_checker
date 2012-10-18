@@ -3,14 +3,12 @@ require 'credit_card_checker'
 
 describe CreditCard do
 
-  let(:credit_card) do
-    CreditCard.new("4111 1111 1111 1111")
-  end
+  let(:credit_card) { CreditCard.new("4111 1111 1111 1111") }
 
   subject { credit_card }
 
-  describe "model attributes" do
-    it { should respond_to(:number) }
+  it "model attributes" do
+    should respond_to(:number)
   end
 
   describe "initial state" do
@@ -19,7 +17,6 @@ describe CreditCard do
   end
 
   describe "validations" do
-
     context "when number is not present" do
       before { credit_card.instance_variable_set(:@number, " ") }
       it { should_not be_valid }

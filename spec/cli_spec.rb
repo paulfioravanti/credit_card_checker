@@ -6,21 +6,21 @@ describe CLI do
 
   subject { cli }
 
-  describe "model attributes" do
-    it { should respond_to(:result) }
+  it "model attributes" do
+    should respond_to(:result)
   end
 
-  describe "instance methods" do
-    it { should respond_to(:check) }
+  it "instance methods" do
+    should respond_to(:check)
   end
 
-  describe "checking credit card numbers" do
+  describe "#check with options[:filename]" do
     let(:default_file) { "credit_cards.txt" }
     let(:data) { test_data }
     let(:result) { expected_result }
     let(:output) { capture(:stdout) { cli.check } }
 
-    it "should parse the file contents and output a result" do
+    it "parses the file contents and outputs a result" do
       File.stub(:readlines).with(default_file) { StringIO.new(data) }
       output.should == result
     end

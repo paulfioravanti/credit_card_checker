@@ -7,21 +7,21 @@ describe Checker do
 
   subject { checker }
 
-  describe "model attributes" do
-    it { should respond_to(:cc_number) }
-    it { should respond_to(:cc_type) }
-    it { should respond_to(:validity) }
+  it "model attributes" do
+    should respond_to(:cc_number)
+    should respond_to(:cc_type)
+    should respond_to(:validity)
   end
 
-  describe "instance methods" do
-    it { should respond_to(:check).with(1).argument }
+  it "instance methods" do
+    should respond_to(:check).with(1).argument
   end
 
   describe "initial state" do
     it { should be_valid }
   end
 
-  shared_examples_for "all credit cards" do
+  shared_examples_for "a credit card" do
     let(:expected_result) do
       {
         cc_type: cc_type,
@@ -30,15 +30,12 @@ describe Checker do
       }
     end
     its(:cc_number) { should == credit_card.number }
-    its(:cc_type) { should == cc_type }
-    its(:validity) { should == validity }
-    its(:result) do
-      should == expected_result
-    end
+    its(:cc_type)   { should == cc_type }
+    its(:validity)  { should == validity }
+    its(:result)    { should == expected_result }
   end
 
-  describe "card validation" do
-
+  describe "#check" do
     context "for AMEX cards" do
       let(:cc_type) { 'AMEX' }
 
@@ -48,7 +45,7 @@ describe Checker do
         valid_test_amex_cards.each do |number|
           let(:credit_card) { CreditCard.new(number) }
           before { checker.check(credit_card) }
-          it_should_behave_like "all credit cards"
+          it_should_behave_like "a credit card"
         end
       end
 
@@ -58,7 +55,7 @@ describe Checker do
         invalid_test_amex_cards.each do |number|
           let(:credit_card) { CreditCard.new(number) }
           before { checker.check(credit_card) }
-          it_should_behave_like "all credit cards"
+          it_should_behave_like "a credit card"
         end
       end
 
@@ -73,7 +70,7 @@ describe Checker do
         valid_test_discover_cards.each do |number|
           let(:credit_card) { CreditCard.new(number) }
           before { checker.check(credit_card) }
-          it_should_behave_like "all credit cards"
+          it_should_behave_like "a credit card"
         end
       end
 
@@ -83,7 +80,7 @@ describe Checker do
         invalid_test_discover_cards.each do |number|
           let(:credit_card) { CreditCard.new(number) }
           before { checker.check(credit_card) }
-          it_should_behave_like "all credit cards"
+          it_should_behave_like "a credit card"
         end
       end
 
@@ -98,7 +95,7 @@ describe Checker do
         valid_test_mastercard_cards.each do |number|
           let(:credit_card) { CreditCard.new(number) }
           before { checker.check(credit_card) }
-          it_should_behave_like "all credit cards"
+          it_should_behave_like "a credit card"
         end
       end
 
@@ -108,7 +105,7 @@ describe Checker do
         invalid_test_mastercard_cards.each do |number|
           let(:credit_card) { CreditCard.new(number) }
           before { checker.check(credit_card) }
-          it_should_behave_like "all credit cards"
+          it_should_behave_like "a credit card"
         end
       end
 
@@ -123,7 +120,7 @@ describe Checker do
         valid_test_visa_cards.each do |number|
           let(:credit_card) { CreditCard.new(number) }
           before { checker.check(credit_card) }
-          it_should_behave_like "all credit cards"
+          it_should_behave_like "a credit card"
         end
       end
 
@@ -133,7 +130,7 @@ describe Checker do
         invalid_test_visa_cards.each do |number|
           let(:credit_card) { CreditCard.new(number) }
           before { checker.check(credit_card) }
-          it_should_behave_like "all credit cards"
+          it_should_behave_like "a credit card"
         end
       end
     end
@@ -147,7 +144,7 @@ describe Checker do
         valid_test_unknown_cards.each do |number|
           let(:credit_card) { CreditCard.new(number) }
           before { checker.check(credit_card) }
-          it_should_behave_like "all credit cards"
+          it_should_behave_like "a credit card"
         end
       end
 
@@ -157,10 +154,9 @@ describe Checker do
         invalid_test_unknown_cards.each do |number|
           let(:credit_card) { CreditCard.new(number) }
           before { checker.check(credit_card) }
-          it_should_behave_like "all credit cards"
+          it_should_behave_like "a credit card"
         end
       end
-
     end
   end
 end

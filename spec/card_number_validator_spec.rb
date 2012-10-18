@@ -8,12 +8,12 @@ describe CardNumberValidator do
 
   subject { validator }
 
-  describe "model attributes" do
-    it { should respond_to(:number_array) }
+  it "model attributes" do
+    should respond_to(:number_array)
   end
 
-  describe "instance methods" do
-    it { should respond_to(:number_valid?) }
+  it "instance methods" do
+    should respond_to(:number_valid?)
   end
 
   describe "initial state" do
@@ -21,5 +21,5 @@ describe CardNumberValidator do
     its(:number_array) { should == card_number.chars.map(&:to_i) }
   end
 
-  # number_valid? method tested in checker_spec.rb
+  # #number_valid? method tested in checker_spec.rb
 end

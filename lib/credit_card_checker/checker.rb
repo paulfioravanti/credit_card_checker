@@ -17,14 +17,6 @@ module CreditCardChecker
       result
     end
 
-    # def result
-    #   {
-    #     cc_type:   @cc_type,
-    #     cc_number: @cc_number,
-    #     validity:  @validity
-    #   }
-    # end
-
     private
 
       def validate_card_type
@@ -43,7 +35,6 @@ module CreditCardChecker
       end
 
       def determine_validity
-        # @validity = card_number_valid? ? "valid" : "invalid"
         validator = CardNumberValidator.new(@cc_number)
         @validity = validator.number_valid? ? "valid" : "invalid"
       end
@@ -55,16 +46,5 @@ module CreditCardChecker
           validity:  @validity
         }
       end
-
-      # def card_number_valid?
-      #   digits = @cc_number.chars.map(&:to_i)
-      #   check = digits.pop
-
-      #   sum = digits.reverse.each_slice(2).map do |left_digit, right_digit|
-      #     [(left_digit * 2).divmod(10), right_digit]
-      #   end.push(check).flatten.compact.inject(:+)
-
-      #   sum % 10 == 0
-      # end
     end
 end
