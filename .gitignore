@@ -4,3 +4,7 @@ pkg/
 vendor/cache/*.gem
 .DS_Store
 coverage/
+
+# Ignore bundler config
+.bundle/
+bundler_stubs/
