@@ -10,7 +10,7 @@ module CreditCardChecker
     attr_accessor :result
 
     def initialize(*args)
-      super
+      super(*args)
       @output = []
       @credit_card_numbers =
         File.readlines(options[:filename]).map { |line| line.chomp }
