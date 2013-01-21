@@ -5,6 +5,6 @@ gemspec
 group :development do
   gem 'kramdown'
   gem 'fuubar'
-  gem 'simplecov'
+  gem 'simplecov', require: false
   gem 'reek'
 end
