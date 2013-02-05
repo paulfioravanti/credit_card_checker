@@ -41,7 +41,7 @@ Check code smells:
 
 Check quality metrics:
 
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/paulfioravanti/credit_card_checker)
+[![Code Climate](https://codeclimate.com/github/paulfioravanti/credit_card_checker.png)](https://codeclimate.com/github/paulfioravanti/credit_card_checker)
 
 ### TODOs:
 
