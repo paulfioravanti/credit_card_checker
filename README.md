@@ -41,7 +41,7 @@ Check quality metrics:
 
 [![Code Climate](https://codeclimate.com/github/paulfioravanti/credit_card_checker.png)](https://codeclimate.com/github/paulfioravanti/credit_card_checker)
 
-### TODOs:
+#### TODOs:
 
 - Fix that one last code reek...
 - More robust CLI testing and implementation; make handling of bad files fail gracefully, add more options etc.
@@ -58,4 +58,4 @@ Check quality metrics:
 
 Copyright (c) 2012 Paul Fioravanti
 
-See [LICENSE](./LICENSE.txt) for details.
+See [MIT LICENSE](./LICENSE.txt) for details.
