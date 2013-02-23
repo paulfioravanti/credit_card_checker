@@ -9,8 +9,6 @@ All code is written in pure Ruby, with some help from [ActiveModel::Validations]
 - Help with a Ruby-esque implementation of the [Luhn algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm) came from [this StackOverflow answer](http://stackoverflow.com/a/9189731/567863)
 - Test credit card numbers (valid and invalid) were generated using [this credit card number generator](http://www.mobilefish.com/services/credit_card_number_generator/credit_card_number_generator.php) by [MobileFish](http://www.mobilefish.com/)
 
-If you find this repo useful, please help me level-up on [Coderwall](http://coderwall.com/) with an [![endorse](http://api.coderwall.com/pfioravanti/endorse.png)](http://coderwall.com/pfioravanti)
-
 ## Installation
 
 Install
@@ -48,8 +46,16 @@ Check quality metrics:
 - Fix that one last code reek...
 - More robust CLI testing and implementation; make handling of bad files fail gracefully, add more options etc.
 
+## Social
+
+<a href="http://stackoverflow.com/users/567863/paul-fioravanti">
+<img src="http://stackoverflow.com/users/flair/567863.png?theme=clean" width="208" height="58" alt="profile for Paul Fioravanti at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Paul Fioravanti at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+</a>
+
+[![endorse](http://api.coderwall.com/pfioravanti/endorse.png)](http://coderwall.com/pfioravanti)
+
 ### Copyright
 
 Copyright (c) 2012 Paul Fioravanti
 
-See [LICENSE](https://github.com/paulfioravanti/credit_card_checker/blob/master/LICENSE.txt) for details.
+See [LICENSE](./LICENSE.txt) for details.
