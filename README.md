@@ -23,7 +23,7 @@ Run program:
 
 ## Testing:
 
-Code quality is attempted by using [RSpec](http://rspec.info/) for testing, [SimpleCov](https://github.com/colszowka/simplecov) for code test coverage, [Reek](https://github.com/troessner/reek) to fix code smells, and [Code Climate](https://codeclimate.com/) for quality metrics.
+Code quality is attempted by using [RSpec](http://rspec.info/) for testing, [SimpleCov](https://github.com/colszowka/simplecov) for code test coverage, [Reek](https://github.com/troessner/reek) to fix code smells, as well as [Code Climate](https://codeclimate.com/) and [Coveralls](https://coveralls.io/) for quality metrics.
 
 Run tests:
 
@@ -39,7 +39,8 @@ Check code smells:
 
 Check quality metrics:
 
-[![Code Climate](https://codeclimate.com/github/paulfioravanti/credit_card_checker.png)](https://codeclimate.com/github/paulfioravanti/credit_card_checker)
+[![Code Climate](https://codeclimate.com/github/paulfioravanti/credit_card_checker.png)](https://codeclimate.com/github/paulfioravanti/credit_card_checker) [![Coverage Status](https://coveralls.io/repos/paulfioravanti/credit_card_checker/badge.png?branch=master)](https://coveralls.io/r/paulfioravanti/credit_card_checker)
+
 
 #### TODOs:
 

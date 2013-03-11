@@ -4,6 +4,7 @@ pkg/
 vendor/cache/*.gem
 .DS_Store
 coverage/
+.coveralls.yml
 
 # Ignore bundler config
 .bundle/
