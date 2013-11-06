@@ -60,3 +60,7 @@ Check quality metrics:
 Copyright (c) 2012 Paul Fioravanti
 
 See [MIT LICENSE](./LICENSE.txt) for details.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/paulfioravanti/credit_card_checker/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
