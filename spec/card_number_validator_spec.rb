@@ -16,9 +16,9 @@ describe CardNumberValidator do
     should respond_to(:number_valid?)
   end
 
-  describe "initial state" do
-    it { should be_valid }
-    its(:number_array) { should == card_number.chars.map(&:to_i) }
+  specify "initial state" do
+    expect(validator).to be_valid
+    expect(validator.number_array).to eq(card_number.chars.map(&:to_i))
   end
 
   # #number_valid? method tested in checker_spec.rb
