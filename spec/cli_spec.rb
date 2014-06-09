@@ -21,8 +21,9 @@ describe CLI do
     let(:output) { capture(:stdout) { cli.check } }
 
     it "parses the file contents and outputs a result" do
-      File.stub(:readlines).with(default_file) { StringIO.new(data) }
-      output.should == result
+      allow(File).to \
+        receive(:readlines).with(default_file).and_return(StringIO.new(data))
+      expect(output).to eq(result)
     end
   end
 end
